@@ -1,4 +1,4 @@
-; 7 jan 2023; ; converted to AHKv2
+; 7 jan 2023; converted to AHKv2
 ; Patrick Rosenhøj
 ;
 ; add Danish keys to a keyboard map
@@ -7,6 +7,40 @@
 ; don't use alt+c, alt+d, alt+e, alt+f, alt+v
 
 ; <^>! = <^ >! = LControl & RAlt = AltGr
+; Right Alt will additionally work an any ANSI keyboard as well
+
+
+key_ae := "a"
+key_oe := "o"
+key_aa := "i"
+
+
+;========================================
+;1)               ø & Ø
+;========================================
+;ø: oslash-lowercase
+; 
+#HotIf
+RAlt & o::
+; AltGr o
+{
+    Send "{U+00F8}"
+    return
+}
+
+;Ø: Oslash-UPPERCASE
+; AHK can only grab 2 hotkey combinations
+#HotIf GetKeyState("RAlt")
+Shift & o::
+{
+    Send "{U+00D8}"
+    return
+}
+
+
+
+/*
+
 
 ;========================================
 ;1)               ø & Ø
@@ -80,3 +114,4 @@ Shift & i::
     return
 }
 ;========================================
+*/
