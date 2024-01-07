@@ -10,20 +10,26 @@
 ;1)               ø & Ø
 ;========================================
 ;ø: oslash-lowercase
+; 
 <^>!o::
+; AltGr o
 {
     Send {U+00F8}
     return
 }
 ;Ø: Oslash-UPPERCASE
 ; AHK can only grab 2 hotkey combinations
-#HotIf GetKeyState("o")
-+<^>!o::
-CapsLock & LControl & RAlt & o::
+#HotIf GetKeyState("RAlt")
+Shift & o::
+;CapsLock & LControl & RAlt & o::
 {
     Send {U+00D8}
     return
 }
+
+/*
+
+
 
 ;========================================
 
@@ -68,3 +74,5 @@ CapsLock & LControl & RAlt & i::
     return
 }
 ;========================================
+
+*/
