@@ -14,7 +14,7 @@
 <^>!o::
 ; AltGr o
 {
-    Send {U+00F8}
+    Send "{U+00F8}"
     return
 }
 ;Ø: Oslash-UPPERCASE
@@ -23,7 +23,7 @@
 Shift & o::
 ;CapsLock & LControl & RAlt & o::
 {
-    Send {U+00D8}
+    Send "{U+00D8}"
     return
 }
 
