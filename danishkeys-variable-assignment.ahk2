@@ -10,10 +10,9 @@
 ; Right Alt will additionally work an any ANSI keyboard as well
 
 
-key_ae := "a"
-key_oe := "o"
-key_aa := "i"
-
+key_ae := "a" ; æ 
+key_oe := "o" ; ø
+key_aa := "i" ; å
 
 
 ;========================================
@@ -22,7 +21,7 @@ key_aa := "i"
 ;ø: oslash-lowercase
 ; 
 #HotIf
-Hotkey "RAlt" key_oe, make_oe_lc
+Hotkey "RAlt & " key_oe, make_oe_lc
 ; AltGr o
 make_oe_lc(*)
 {
@@ -33,42 +32,12 @@ make_oe_lc(*)
 ;Ø: Oslash-UPPERCASE
 ; AHK can only grab 2 hotkey combinations
 #HotIf GetKeyState("RAlt")
-Hotkey "Shift" key_oe, make_OE_UC
+Hotkey "Shift & " key_oe, make_OE_UC
 make_OE_UC(*)
 {
     Send "{U+00D8}"
     return
 }
-
-
-
-/*
-
-
-;========================================
-;1)               ø & Ø
-;========================================
-;ø: oslash-lowercase
-; 
-#HotIf
-RAlt & o::
-; AltGr o
-{
-    Send "{U+00F8}"
-    return
-}
-
-;Ø: Oslash-UPPERCASE
-; AHK can only grab 2 hotkey combinations
-#HotIf GetKeyState("RAlt")
-Shift & o::
-{
-    Send "{U+00D8}"
-    return
-}
-
-
-;========================================
 
 ;========================================
 ;2)               æ & Æ
@@ -76,7 +45,8 @@ Shift & o::
 ;æ: aelig-lowercase
 ;<^>!a::
 #HotIf
-RAlt & a::
+Hotkey "RAlt & " key_ae, make_ae_lc
+make_ae_lc(*)
 {
     Send "{U+00E6}"
     return
@@ -86,13 +56,12 @@ RAlt & a::
 ; AHK can only grab 2 hotkey combinations
 ;+<^>!a::
 #HotIf GetKeyState("RAlt")
-Shift & a::
+Hotkey "Shift & " key_ae, make_AE_UC
+make_AE_UC(*)
 {
     Send "{U+00C6}"
     return
 }
-
-;========================================
 
 ;========================================
 ;3)               å & Å
@@ -101,7 +70,8 @@ Shift & a::
 ;å: aring-lowercase
 ;<^>!i::
 #HotIf
-RAlt & i::
+Hotkey "RAlt & " key_aa, make_aa_lc
+make_aa_lc(*)
 {
     Send "{U+00E5}"
     return
@@ -111,10 +81,10 @@ RAlt & i::
 ; AHK can only grab 2 hotkey combinations
 ;+<^>!i::
 #HotIf GetKeyState("RAlt")
-Shift & i::
+Hotkey "Shift & " key_aa, make_AA_UC
+make_AA_UC(*)
 {
     Send "{U+00C5}"
     return
 }
 ;========================================
-*/
