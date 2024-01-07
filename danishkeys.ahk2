@@ -10,41 +10,6 @@
 ; Right Alt will additionally work an any ANSI keyboard as well
 
 
-key_ae := "a"
-key_oe := "o"
-key_aa := "i"
-
-
-
-;========================================
-;1)               ø & Ø
-;========================================
-;ø: oslash-lowercase
-; 
-#HotIf
-Hotkey "RAlt" key_oe, make_oe_lc
-; AltGr o
-make_oe_lc(*)
-{
-    Send "{U+00F8}"
-    return
-}
-
-;Ø: Oslash-UPPERCASE
-; AHK can only grab 2 hotkey combinations
-#HotIf GetKeyState("RAlt")
-Hotkey "Shift" key_oe, make_OE_UC
-make_OE_UC(*)
-{
-    Send "{U+00D8}"
-    return
-}
-
-
-
-/*
-
-
 ;========================================
 ;1)               ø & Ø
 ;========================================
@@ -117,4 +82,3 @@ Shift & i::
     return
 }
 ;========================================
-*/
