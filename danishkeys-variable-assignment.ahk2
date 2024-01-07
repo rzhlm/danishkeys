@@ -7,7 +7,7 @@
 ; don't use alt+c, alt+d, alt+e, alt+f, alt+v
 
 ; <^>! = <^ >! = LControl & RAlt = AltGr
-; Right Alt will additionally work an any ANSI keyboard as well
+; Right Alt will additionally work an any ANSI keymap as well
 
 
 key_ae := "a" ; æ 
