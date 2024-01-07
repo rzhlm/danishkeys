@@ -2,6 +2,8 @@
 ; Patrick Rosenhøj
 ;
 ; add Danish keys to a keyboard map
+; CapsLock doesn't give capitals
+;
 ; don't use alt+c, alt+d, alt+e, alt+f, alt+v
 
 ; <^>! = <^ >! = LControl & RAlt = AltGr
@@ -11,24 +13,22 @@
 ;========================================
 ;ø: oslash-lowercase
 ; 
-<^>!o::
+#HotIf
+RAlt & o::
 ; AltGr o
 {
     Send "{U+00F8}"
     return
 }
+
 ;Ø: Oslash-UPPERCASE
 ; AHK can only grab 2 hotkey combinations
 #HotIf GetKeyState("RAlt")
 Shift & o::
-;CapsLock & LControl & RAlt & o::
 {
     Send "{U+00D8}"
     return
 }
-
-/*
-
 
 
 ;========================================
@@ -37,18 +37,21 @@ Shift & o::
 ;2)               æ & Æ
 ;========================================
 ;æ: aelig-lowercase
-<^>!a::
+;<^>!a::
+#HotIf
+RAlt & a::
 {
-    Send {U+00E6}
+    Send "{U+00E6}"
     return
 }
 
 ;Æ: AElig-UPPERCASE
 ; AHK can only grab 2 hotkey combinations
-+<^>!a::
-CapsLock & LControl & RAlt & a::
+;+<^>!a::
+#HotIf GetKeyState("RAlt")
+Shift & a::
 {
-    Send {U+00C6}
+    Send "{U+00C6}"
     return
 }
 
@@ -59,20 +62,21 @@ CapsLock & LControl & RAlt & a::
 ;========================================
 
 ;å: aring-lowercase
-<^>!i::
+;<^>!i::
+#HotIf
+RAlt & i::
 {
-    Send {U+00E5}
+    Send "{U+00E5}"
     return
 }
 
 ;Å: Aring-UPPERCASE
 ; AHK can only grab 2 hotkey combinations
-+<^>!i::
-CapsLock & LControl & RAlt & i::
+;+<^>!i::
+#HotIf GetKeyState("RAlt")
+Shift & i::
 {
-    Send {U+00C5}
+    Send "{U+00C5}"
     return
 }
 ;========================================
-
-*/
