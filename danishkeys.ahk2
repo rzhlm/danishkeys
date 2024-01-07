@@ -21,7 +21,7 @@ key_aa := "i"
 ;ø: oslash-lowercase
 ; 
 #HotIf
-RAlt & o::
+Hotkey RAlt & key_oe,
 ; AltGr o
 {
     Send "{U+00F8}"
@@ -31,7 +31,7 @@ RAlt & o::
 ;Ø: Oslash-UPPERCASE
 ; AHK can only grab 2 hotkey combinations
 #HotIf GetKeyState("RAlt")
-Shift & o::
+Hotkey Shift & key_oe,
 {
     Send "{U+00D8}"
     return
