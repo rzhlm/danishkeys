@@ -31,8 +31,8 @@ make_oe_lc(*)
 
 ;Ø: Oslash-UPPERCASE
 ; AHK can only grab 2 hotkey combinations
-#HotIf GetKeyState("RAlt")
-Hotkey "Shift & " key_oe, make_OE_UC
+;#HotIf GetKeyState("RAlt")
+Hotkey "RAlt & Shift & " key_oe, make_OE_UC
 make_OE_UC(*)
 {
     Send "{U+00D8}"
@@ -55,8 +55,8 @@ make_ae_lc(*)
 ;Æ: AElig-UPPERCASE
 ; AHK can only grab 2 hotkey combinations
 ;+<^>!a::
-#HotIf GetKeyState("RAlt")
-Hotkey "Shift & " key_ae, make_AE_UC
+;#HotIf GetKeyState("RAlt")
+Hotkey "RAlt & Shift & " key_ae, make_AE_UC
 make_AE_UC(*)
 {
     Send "{U+00C6}"
@@ -80,8 +80,8 @@ make_aa_lc(*)
 ;Å: Aring-UPPERCASE
 ; AHK can only grab 2 hotkey combinations
 ;+<^>!i::
-#HotIf GetKeyState("RAlt")
-Hotkey "Shift & " key_aa, make_AA_UC
+;#HotIf GetKeyState("RAlt")
+Hotkey "RAlt & Shift & " key_aa, make_AA_UC
 make_AA_UC(*)
 {
     Send "{U+00C5}"
