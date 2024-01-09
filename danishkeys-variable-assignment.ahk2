@@ -15,11 +15,46 @@ key_oe := "o" ; ø
 key_aa := "i" ; å
 
 
-#If, GetKeyState("RAlt")
 Hotkey key_oe, make_oe_lc
 Hotkey "Shift & " key_oe, make_OE_UC
 
-#If ; end if
+
+make_oe_lc(*)
+{
+    #HotIf GetKeyState("RAlt","P")
+    Send "{U+00F8}"
+    #HotIf ; end if
+
+    Send(key_oe)
+    ;Send "{U+00D8}"
+    return
+}
+
+make_OE_UC(*)
+{
+    #HotIf GetKeyState("RAlt","P")
+    Send "{U+00D8}"
+    #HotIf ; end if
+
+    Send("Shift & " key_oe)
+    return
+}
+
+
+
+/*
+
+
+
+#HotIf GetKeyState("RAlt")
+Hotkey key_oe, make_oe_lc
+Hotkey "Shift & " key_oe, make_OE_UC
+
+#HotIf ; end if
+
+Hotkey key_oe, (*) => Send("key_oe")
+Hotkey "Shift & " key_oe, (*) => Send("Shift & " key_oe)
+
 
 make_oe_lc(*)
 {
@@ -32,6 +67,9 @@ make_OE_UC(*)
     Send "{U+00D8}"
     return
 }
+
+*/
+
 
 /*
 
