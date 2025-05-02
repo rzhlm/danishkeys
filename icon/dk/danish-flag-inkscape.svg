@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="37"
+   height="28"
+   viewBox="0 0 37 28"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="danish-flag-inkscape.svg"
+   inkscape:export-filename="danish-flag-inkscape.png"
+   inkscape:export-xdpi="664.21619"
+   inkscape:export-ydpi="664.21619"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="23.725615"
+     inkscape:cx="29.967611"
+     inkscape:cy="13.466458"
+     inkscape:window-width="2560"
+     inkscape:window-height="1373"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       id="grid1"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="1"
+       spacingy="1"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       enabled="true"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:1;fill:#e5002a;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-dasharray:none"
+       id="top-left"
+       width="12"
+       height="12"
+       x="0"
+       y="0" />
+    <rect
+       style="opacity:1;fill:#e5002a;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-dasharray:none"
+       id="top-right"
+       width="21"
+       height="12"
+       x="16"
+       y="0" />
+    <rect
+       style="opacity:1;fill:#e5002a;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-dasharray:none"
+       id="bottom-right"
+       width="21"
+       height="12"
+       x="16"
+       y="16" />
+    <rect
+       style="opacity:1;fill:#e5002a;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-dasharray:none"
+       id="bottom-left"
+       width="12"
+       height="12"
+       x="0"
+       y="16" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-dasharray:none"
+       id="rect1"
+       width="12"
+       height="4"
+       x="0"
+       y="12" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-dasharray:none"
+       id="rect2"
+       width="4"
+       height="4"
+       x="12"
+       y="12" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-dasharray:none"
+       id="rect3"
+       width="21"
+       height="4"
+       x="16"
+       y="12" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-dasharray:none"
+       id="rect4"
+       width="4"
+       height="12"
+       x="12"
+       y="16" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-dasharray:none"
+       id="rect5"
+       width="4"
+       height="12"
+       x="12"
+       y="0" />
+  </g>
+</svg>

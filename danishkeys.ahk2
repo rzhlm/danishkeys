@@ -1,84 +1,118 @@
-; 7 jan 2023; converted to AHKv2
+; DANISHKEYS for Windows
+; x86/x64
+; 2 May 2025; converted to AHKv2
 ; Patrick Rosenhøj
 ;
-; add Danish keys to a keyboard map
-; CapsLock doesn't give capitals
+; add Danish keys to a Windows keyboard map
 ;
 ; don't use alt+c, alt+d, alt+e, alt+f, alt+v
+; these are system-reserved
 
 ; <^>! = <^ >! = LControl & RAlt = AltGr
 ; Right Alt will additionally work an any ANSI keymap as well
 
 
+
+;========================================
+; settings
+;
+;========================================
+#SingleInstance Prompt ; the prompt is slightly confusing though
+
+/* TO BE REMOVED WHEN BUILD SCRIPT WORKS PROPERLY
+version := "2.1"
+;@Ahk2Exe-SetMainIcon ./icon/dk/dk-col.ico ;  color icon
+;@Ahk2Exe-AddResource ./icon/dk/dk-bw.ico, 206 ; greyed icon
+;@Ahk2Exe-AddResource ./icon/dk/dk-bw.ico, 207 ; greyed icon
+;@Ahk2Exe-AddResource ./icon/dk/dk-bw.ico, 208; greyed icon
+;TraySetIcon("./icon/dk/dk-col.ico", , true) ; No freeze, otherwise greyed out
+; icons can't be displayed (when Paused)
+*/
+
+
+trayMenu := A_TrayMenu
+trayMenu.Insert(, "")
+trayMenu.Add("Help", (*) => ShowHelp())
+trayMenu.Add("About", (*) => ShowAbout())
+
+ShowHelp() {
+	MsgBox("Help things", "Help", 32)
+}
+
+
+ShowAbout() {
+	contents := "
+	(
+	© 2007-2025 Patrick Rosenhøj
+	licensed under the BSD License
+	v 
+	)" version
+
+	MsgBox contents, "About", 64
+
+;    MsgBox("About this script... Version 1.0. Made with AutoHotkey v2.\n Version " version, "About", 64)
+}
+
+
 ;========================================
 ;1)               ø & Ø
-;========================================
 ;ø: oslash-lowercase
 ; 
+;========================================
+
 #HotIf
 RAlt & o::
 ; AltGr o
-{
-    Send "{U+00F8}"
+{	
+	state := GetKeyState("CapsLock", "T")
+	if state
+		;Send "{U+00D8}" ; Ø: Oslash-Uppercase
+		SendInput "{U+00D8}" ; Ø: Oslash-Uppercase
+	else
+		;Send "{U+00F8}" ; ø: oslash-lowercase
+		SendInput "{U+00F8}" ; ø: oslash-lowercase
     return
 }
+#HotIf
 
-;Ø: Oslash-UPPERCASE
-; AHK can only grab 2 hotkey combinations
-#HotIf GetKeyState("RAlt")
-Shift & o::
-{
-    Send "{U+00D8}"
-    return
-}
-
-
-;========================================
 
 ;========================================
 ;2)               æ & Æ
-;========================================
 ;æ: aelig-lowercase
+;========================================
 ;<^>!a::
+
 #HotIf
 RAlt & a::
-{
-    Send "{U+00E6}"
+{	
+	state := GetKeyState("CapsLock", "T")
+	if state
+		;Send "{U+00C6}"	;Æ: Aelig-Uppercase
+		SendInput "{U+00C6}"	;Æ: Aelig-Uppercase
+	else
+		;Send "{U+00E6}"	;æ: aelig-lowercase
+		SendInput "{U+00E6}"	;æ: aelig-lowercase
     return
 }
+#HotIf
 
-;Æ: AElig-UPPERCASE
-; AHK can only grab 2 hotkey combinations
-;+<^>!a::
-#HotIf GetKeyState("RAlt")
-Shift & a::
-{
-    Send "{U+00C6}"
-    return
-}
-
-;========================================
 
 ;========================================
 ;3)               å & Å
+;å: aring-lowercase
 ;========================================
 
-;å: aring-lowercase
-;<^>!i::
 #HotIf
 RAlt & i::
 {
-    Send "{U+00E5}"
+	state := GetKeyState("CapsLock", "T")
+	if state
+		;Send "{U+00C5}" ;Å: Aring-UPPERCASE
+		SendInput "{U+00C5}" ;Å: Aring-UPPERCASE
+	else
+		;Send "{U+00E5}"	; å: aring-lowercase
+		SendInput "{U+00E5}"	; å: aring-lowercase
     return
 }
+#HotIf
 
-;Å: Aring-UPPERCASE
-; AHK can only grab 2 hotkey combinations
-;+<^>!i::
-#HotIf GetKeyState("RAlt")
-Shift & i::
-{
-    Send "{U+00C5}"
-    return
-}
-;========================================

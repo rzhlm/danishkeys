@@ -1,0 +1,84 @@
+; 7 jan 2023; converted to AHKv2
+; Patrick Rosenhøj
+;
+; add Danish keys to a keyboard map
+; CapsLock doesn't give capitals
+;
+; don't use alt+c, alt+d, alt+e, alt+f, alt+v
+
+; <^>! = <^ >! = LControl & RAlt = AltGr
+; Right Alt will additionally work an any ANSI keymap as well
+
+
+;========================================
+;1)               ø & Ø
+;========================================
+;ø: oslash-lowercase
+; 
+#HotIf
+RAlt & o::
+; AltGr o
+{
+    Send "{U+00F8}"
+    return
+}
+
+;Ø: Oslash-UPPERCASE
+; AHK can only grab 2 hotkey combinations
+#HotIf GetKeyState("RAlt")
+Shift & o::
+{
+    Send "{U+00D8}"
+    return
+}
+
+
+;========================================
+
+;========================================
+;2)               æ & Æ
+;========================================
+;æ: aelig-lowercase
+;<^>!a::
+#HotIf
+RAlt & a::
+{
+    Send "{U+00E6}"
+    return
+}
+
+;Æ: AElig-UPPERCASE
+; AHK can only grab 2 hotkey combinations
+;+<^>!a::
+#HotIf GetKeyState("RAlt")
+Shift & a::
+{
+    Send "{U+00C6}"
+    return
+}
+
+;========================================
+
+;========================================
+;3)               å & Å
+;========================================
+
+;å: aring-lowercase
+;<^>!i::
+#HotIf
+RAlt & i::
+{
+    Send "{U+00E5}"
+    return
+}
+
+;Å: Aring-UPPERCASE
+; AHK can only grab 2 hotkey combinations
+;+<^>!i::
+#HotIf GetKeyState("RAlt")
+Shift & i::
+{
+    Send "{U+00C5}"
+    return
+}
+;========================================
