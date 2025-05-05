@@ -17,9 +17,11 @@
 ; settings
 ;
 ;========================================
-#SingleInstance Prompt ; the prompt is slightly confusing though
 
 /* TO BE REMOVED WHEN BUILD SCRIPT WORKS PROPERLY
+#SingleInstance Prompt ; the prompt is slightly confusing though
+
+
 version := "2.1"
 ;@Ahk2Exe-SetMainIcon ./icon/dk/dk-col.ico ;  color icon
 ;@Ahk2Exe-AddResource ./icon/dk/dk-bw.ico, 206 ; greyed icon
@@ -33,7 +35,10 @@ version := "2.1"
 trayMenu := A_TrayMenu
 trayMenu.Insert(, "")
 trayMenu.Add("Help", (*) => ShowHelp())
+;MsgBox(version) 
 trayMenu.Add("About", (*) => ShowAbout())
+;trayMenu.Add("About", (*) => ShowAbout(version))
+;trayMenu.Add("About", ShowAbout.Bind(version))
 
 ShowHelp() {
 	MsgBox("Help things", "Help", 32)
@@ -41,16 +46,16 @@ ShowHelp() {
 
 
 ShowAbout() {
+	global version
 	contents := "
 	(
 	© 2007-2025 Patrick Rosenhøj
 	licensed under the BSD License
 	v 
-	)" version
+	)" . version
 
 	MsgBox contents, "About", 64
 
-;    MsgBox("About this script... Version 1.0. Made with AutoHotkey v2.\n Version " version, "About", 64)
 }
 
 
